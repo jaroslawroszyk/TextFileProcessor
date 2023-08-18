@@ -11,10 +11,18 @@ TextFileProcessor is a C++ utility that simplifies the process of cleaning, sort
 
 ## Usage
 
-1. Set the `folderPath` variable in the code to the path of your directory containing text files.
-2. Compile the program using a C++ compiler.
-3. Run the compiled executable.
-4. View the sorted lines in the console and find the organized results in the output file.
+1. Clone this repository.
+2. Navigate to the project directory.
+
+### Compilation and Execution
+
+To compile and run the program, use the following command in your terminal:
+
+```bash
+g++ --std=c++2a main.cpp -o out && ./out English/
+
+Replace English/ with the path to the folder containing the text files you want to process.
+```
 
 ## Getting Started
 

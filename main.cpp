@@ -45,9 +45,15 @@ void saveToNewFile(const std::vector<std::string>& processedLines)
     outputFile.close();
 }
 
-int main()
+int main(int argc, char* argv[])
 {
-    std::string folderPath = "/home/jarek/cpp/ReadFilesFromDirectory/English";
+    if (argc < 2)
+    {
+        std::cerr << "Usage: " << argv[0] << " folderPath" << std::endl;
+        return 1;
+    }
+
+    std::string folderPath = argv[1];
     std::vector<std::string> processedLines{};
 
     for (const auto& entry : fs::directory_iterator(folderPath))
@@ -64,10 +70,6 @@ int main()
     auto print = [](auto& container) { for (auto& el : container) { std::cout << el << std::endl; } };
     print(processedLines);
     saveToNewFile(processedLines);
-    // for (const std::string& line : processedLines)
-    // {
-        // std::cout << line << std::endl;
-    // }
 
     return 0;
 }
